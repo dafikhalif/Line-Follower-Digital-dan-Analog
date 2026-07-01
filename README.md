@@ -27,6 +27,7 @@
 - [Digital vs Analog](#️-digital-vs-analog)
 - [Fitur Utama](#-fitur-utama)
 - [Sistem & Hardware](#-sistem--hardware)
+- [Skematik Rangkaian](#-skematik-rangkaian)
 - [Struktur Repository](#-struktur-repository)
 - [Cara Penggunaan](#-cara-penggunaan)
 - [Rencana Pengembangan](#-rencana-pengembangan)
@@ -100,6 +101,16 @@ Rangkaian PID analog dibangun murni dari op-amp (TL074 & TL082), tersusun dari b
 
 ---
 
+## 🖼️ Skematik Rangkaian
+
+**Mainboard (Digital & Analog)**
+![Skematik Digital](Skematik/Skematik_Digital.png)
+
+**Rangkaian PID Analog (Op-Amp)**
+![Skematik Analog](Skematik/Skematik_Analog.png)
+
+---
+
 ## 🗂️ Struktur Repository
 
 ```
@@ -108,8 +119,8 @@ Line-Follower-Analog-dan-Digital/
 │   ├── DigitalMode/          # Kode ESP32 (PID digital, MUX, deteksi track)
 │   └── AnalogMode/           # Skematik & kode pendukung rangkaian analog
 ├── Hardware/
-│   ├── Schematics/           # Skematik rangkaian (op-amp, driver motor, dll)
 │   └── PCB/                  # Desain PCB
+├── Skematik/                  # Gambar skematik rangkaian digital & analog
 ├── Dokumentasi/               # Foto & GIF demo robot
 ├── README.md
 └── LICENSE
@@ -125,7 +136,7 @@ Line-Follower-Analog-dan-Digital/
    ```
 2. Pilih mode operasi:
    - **Digital** → upload firmware dari `Firmware/DigitalMode/` ke ESP32
-   - **Analog** → rakit rangkaian sesuai skematik di `Hardware/Schematics/`
+   - **Analog** → rakit rangkaian sesuai skematik di `Skematik/`
 3. Kalibrasi sensor sebelum robot dijalankan (`blackMode()` / `whiteMode()`)
 4. Jalankan robot pada lintasan
 
