@@ -41,7 +41,7 @@ Line-Follower-Analog-dan-Digital/
 | Mikrokontroler    | ESP32                                    |
 | Sensor Garis      | Array fototransistor/IR + MUX 8 channel  |
 | Rangkaian Analog  | Op-amp LM358 (komparator/PID analog)     |
-| Driver Motor      | (isi sesuai driver yang dipakai)         |
+| Driver Motor      | L293D                                    |
 | Firmware          | Arduino / C++                            |
 | Software Pendukung| Arduino IDE / PlatformIO                 |
 
