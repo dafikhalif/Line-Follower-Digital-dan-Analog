@@ -28,7 +28,6 @@
 - [Fitur Utama](#-fitur-utama)
 - [Sistem & Hardware](#-sistem--hardware)
 - [Skematik Rangkaian](#-skematik-rangkaian)
-- [Struktur Repository](#-struktur-repository)
 - [Cara Penggunaan](#-cara-penggunaan)
 - [Rencana Pengembangan](#-rencana-pengembangan)
 - [Tim](#-tim)
@@ -110,23 +109,6 @@ Rangkaian PID analog dibangun murni dari op-amp (TL074 & TL082), tersusun dari b
 **Rangkaian PID Analog (Op-Amp)**
 
 <img src="Skematik/Skematik%20Analog.png" width="800" />
-
----
-
-## 🗂️ Struktur Repository
-
-```
-Line-Follower-Analog-dan-Digital/
-├── Firmware/
-│   ├── DigitalMode/          # Kode ESP32 (PID digital, MUX, deteksi track)
-│   └── AnalogMode/           # Skematik & kode pendukung rangkaian analog
-├── Hardware/
-│   └── PCB/                  # Desain PCB
-├── Skematik/                  # Gambar skematik rangkaian digital & analog
-├── Dokumentasi/               # Foto & GIF demo robot
-├── README.md
-└── LICENSE
-```
 
 ---
 
