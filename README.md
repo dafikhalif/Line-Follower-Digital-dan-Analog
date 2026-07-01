@@ -3,9 +3,9 @@
 Robot line follower dengan **dua mode kendali**: mode **Digital** (PID berbasis mikrokontroler ESP32) dan mode **Analog** (rangkaian op-amp berbasis komparator/PID analog LM358). Dikembangkan untuk kebutuhan riset PID control dan kompetisi robotika.
 
 <p align="center">
-  <img src="Dokumentasi/Start Merah.gif" width="32%" />
-  <img src="Dokumentasi/Start Kuning.gif" width="32%" />
-  <img src="Dokumentasi/LF Analog.gif" width="32%" />
+  <img src="Dokumentasi/Start_Merah.gif" width="32%" />
+  <img src="Dokumentasi/Start_Kuning.gif" width="32%" />
+  <img src="Dokumentasi/LF_Analog.gif" width="32%" />
 </p>
 
 ---
@@ -31,7 +31,7 @@ Line-Follower-Analog-dan-Digital/
 ├── Hardware/
 │   ├── Schematics/           # Skematik rangkaian (op-amp, driver motor, dll)
 │   └── PCB/                  # Desain PCB (jika ada)
-├── image/                    # Foto & GIF demo robot
+├── Dokumentasi/               # Foto & GIF demo robot
 ├── README.md
 └── LICENSE
 ```
@@ -45,7 +45,7 @@ Line-Follower-Analog-dan-Digital/
 | Mikrokontroler    | ESP32                                    |
 | Sensor Garis      | Array fototransistor/IR + MUX 8 channel  |
 | Rangkaian Analog  | Op-amp LM358 (komparator/PID analog)     |
-| Driver Motor      | (isi sesuai driver yang dipakai)         |
+| Driver Motor      | L293D                                    |
 | Firmware          | Arduino / C++                            |
 | Software Pendukung| Arduino IDE / PlatformIO                 |
 
@@ -67,13 +67,15 @@ Line-Follower-Analog-dan-Digital/
 
 ## 📸 Dokumentasi
 
-![Hardware](image/hardware.jpeg)
+![Hardware](Dokumentasi/hardware.jpeg)
 
 ---
 
 ## 👤 Kontributor
 
-- **Dafi Khalif Arrafa** — D-IV Instrumentasi dan Kontrol, Sekolah Vokasi UGM
+- **Dafi Khalif Arrafa** — D-IV Teknologi Rekayasa Instrumentasi dan Kontrol, Sekolah Vokasi UGM
+- **Rio Daris Syathir** — D-IV Teknologi Rekayasa Instrumentasi dan Kontrol, Sekolah Vokasi UGM
+- **Dilla Zulfahrani** — D-IV Teknologi Rekayasa Instrumentasi dan Kontrol, Sekolah Vokasi UGM
 
 ---
 
