@@ -83,17 +83,17 @@ Kombinasi ini dipakai untuk riset perbandingan performa kendali PID digital vs a
 
 Rangkaian PID analog dibangun murni dari op-amp (TL074 & TL082), tersusun dari beberapa blok berikut:
 
-- **VREF Generator** — pembangkit tegangan referensi 2.5V sebagai titik tengah (midpoint) sistem
-- **Summing Point Sensor** — menjumlahkan sinyal dari 8 sensor IR melalui potensiometer pembobot menjadi dua sinyal gabungan, `SUM_KIRI` dan `SUM_KANAN`
-- **Blok V_ERROR** — menghitung sinyal error (`VERROR`) dari selisih `SUM_KIRI` dan `SUM_KANAN` terhadap `VREF`
-- **Blok P, I, D** — tiga rangkaian op-amp terpisah yang mengolah `VERROR` menjadi komponen Proportional (`KP`), Integral (`KI`), dan Derivative (`KD`), masing-masing dengan potensiometer gain untuk tuning manual
-- **Summing PID** — menjumlahkan `KP`, `KI`, `KD` menjadi satu sinyal kendali `VPID`
-- **Blok Motor Mixer** — menggabungkan `VREF` dan `VPID` menghasilkan dua sinyal output analog `AN_R` dan `AN_L` sebagai perintah kecepatan motor kanan & kiri
+- **VREF Generator** — pembangkit tegangan referensi sebagai titik tengah (midpoint) sistem
+- **Summing Point Sensor** — menjumlahkan sinyal dari 8 sensor IR melalui potensiometer pembobot menjadi dua sinyal gabungan (kiri dan kanan)
+- **Blok Error** — menghitung selisih antara sinyal kiri dan kanan terhadap tegangan referensi untuk mendapatkan sinyal error
+- **Blok P, I, D** — tiga rangkaian op-amp terpisah yang mengolah sinyal error menjadi komponen Proportional, Integral, dan Derivative, masing-masing dengan potensiometer gain untuk tuning manual
+- **Summing PID** — menjumlahkan ketiga komponen P, I, D menjadi satu sinyal kendali gabungan
+- **Blok Motor Mixer** — menggabungkan sinyal kendali dengan tegangan referensi untuk menghasilkan dua sinyal output analog sebagai perintah kecepatan motor kanan & kiri
 
 **Konektor**
-- `CON_SENSOR` — input 8 kanal sensor IR
-- `CON_DIGITAL` — output analog `AN_L`, `AN_R`, `5V`, `GND` menuju board digital (ESP32) untuk dibaca ADC dan dikonversi menjadi PWM motor
-- `IC_POWER` — distribusi suplai 5V ke seluruh op-amp
+- Konektor sensor — input 8 kanal sensor IR dari array
+- Konektor digital — meneruskan sinyal output analog beserta suplai daya menuju board digital (ESP32) untuk dibaca ADC dan dikonversi menjadi PWM motor
+- Distribusi daya — menyalurkan suplai 5V ke seluruh op-amp pada rangkaian
 
 **Motor Driver**
 - L293D dual H-Bridge untuk motor kiri dan kanan
