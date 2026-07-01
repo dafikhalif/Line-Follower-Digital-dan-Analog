@@ -104,10 +104,10 @@ Rangkaian PID analog dibangun murni dari op-amp (TL074 & TL082), tersusun dari b
 ## 🖼️ Skematik Rangkaian
 
 **Mainboard (Digital & Analog)**
-![Skematik Digital](Skematik/Skematik_Digital.png)
+![Skematik Digital](Skematik/Skematik%20Digital.png)
 
 **Rangkaian PID Analog (Op-Amp)**
-![Skematik Analog](Skematik/Skematik_Analog.png)
+![Skematik Analog](Skematik/Skematik%20Analog.png)
 
 ---
 
