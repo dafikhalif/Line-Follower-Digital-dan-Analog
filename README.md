@@ -3,9 +3,9 @@
 Robot line follower dengan **dua mode kendali**: mode **Digital** (PID berbasis mikrokontroler ESP32) dan mode **Analog** (rangkaian op-amp berbasis komparator/PID analog LM358). Dikembangkan untuk kebutuhan riset PID control dan kompetisi robotika.
 
 <p align="center">
-  <img src="Dokumentasi/Start_Merah.gif" width="32%" />
-  <img src="Dokumentasi/Start_Kuning.gif" width="32%" />
-  <img src="Dokumentasi/LF_Analog.gif" width="32%" />
+  <img src="Dokumentasi/Start Merah.gif" width="32%" />
+  <img src="Dokumentasi/Start Kuning.gif" width="32%" />
+  <img src="Dokumentasi/LF Analog.gif" width="32%" />
 </p>
 
 ---
