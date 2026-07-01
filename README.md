@@ -83,17 +83,17 @@ Kombinasi ini dipakai untuk riset perbandingan performa kendali PID digital vs a
 
 Rangkaian PID analog dibangun murni dari op-amp (TL074 & TL082), tersusun dari beberapa blok berikut:
 
-- **VREF Generator** — pembangkit tegangan referensi 2.5V sebagai titik tengah (midpoint) sistem, menggunakan pembagi tegangan R1/R2 dan buffer op-amp
-- **Summing Point Sensor** — menjumlahkan 8 sinyal sensor (IR1–IR8) melalui potensiometer pembobot (RV4–RV11) menjadi dua sinyal gabungan, `SUM_KIRI` dan `SUM_KANAN`
-- **Blok V_ERROR** — menghitung sinyal error (`VERROR`) dari selisih `SUM_KIRI`, `VREF`, dan `SUM_KANAN`
-- **Blok P, I, D** — tiga rangkaian op-amp terpisah yang mengolah `VERROR` menjadi komponen Proportional (`KP`), Integral (`KI`), dan Derivative (`KD`), masing-masing dengan potensiometer gain (RV1, RV2, RV3) untuk tuning manual
+- **VREF Generator** — pembangkit tegangan referensi 2.5V sebagai titik tengah (midpoint) sistem
+- **Summing Point Sensor** — menjumlahkan sinyal dari 8 sensor IR melalui potensiometer pembobot menjadi dua sinyal gabungan, `SUM_KIRI` dan `SUM_KANAN`
+- **Blok V_ERROR** — menghitung sinyal error (`VERROR`) dari selisih `SUM_KIRI` dan `SUM_KANAN` terhadap `VREF`
+- **Blok P, I, D** — tiga rangkaian op-amp terpisah yang mengolah `VERROR` menjadi komponen Proportional (`KP`), Integral (`KI`), dan Derivative (`KD`), masing-masing dengan potensiometer gain untuk tuning manual
 - **Summing PID** — menjumlahkan `KP`, `KI`, `KD` menjadi satu sinyal kendali `VPID`
-- **Blok Motor Mixer** — menggabungkan `VREF` dan `VPID` (TL082) menghasilkan dua sinyal output analog `AN_R` dan `AN_L` sebagai perintah kecepatan motor kanan & kiri
+- **Blok Motor Mixer** — menggabungkan `VREF` dan `VPID` menghasilkan dua sinyal output analog `AN_R` dan `AN_L` sebagai perintah kecepatan motor kanan & kiri
 
 **Konektor**
-- `CON_SENSOR` — input 8 kanal sensor IR (J1: IR1–IR4, J2: IR5–IR8)
+- `CON_SENSOR` — input 8 kanal sensor IR
 - `CON_DIGITAL` — output analog `AN_L`, `AN_R`, `5V`, `GND` menuju board digital (ESP32) untuk dibaca ADC dan dikonversi menjadi PWM motor
-- `IC_POWER` — distribusi suplai 5V ke seluruh op-amp (U1E, U2E, U3C)
+- `IC_POWER` — distribusi suplai 5V ke seluruh op-amp
 
 **Motor Driver**
 - L293D dual H-Bridge untuk motor kiri dan kanan
