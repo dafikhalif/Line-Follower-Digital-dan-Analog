@@ -69,7 +69,9 @@ Line-Follower-Analog-dan-Digital/
 
 ## 👤 Kontributor
 
-- **Dafi Khalif Arrafa** — D-IV Instrumentasi dan Kontrol, Sekolah Vokasi UGM
+- **Dafi Khalif Arrafa** — D-IV Teknologi Rekayasa Instrumentasi dan Kontrol, Sekolah Vokasi UGM
+- **Rio Daris Syathir** — D-IV Teknologi Rekayasa Instrumentasi dan Kontrol, Sekolah Vokasi UGM
+- **Dilla Zulfahrani** — D-IV Teknologi Rekayasa Instrumentasi dan Kontrol, Sekolah Vokasi UGM
 
 ---
 
