@@ -1,23 +1,83 @@
 # 🤖 Line Follower Analog dan Digital
 
-Robot line follower dengan **dua mode kendali**: mode **Digital** (PID berbasis mikrokontroler ESP32) dan mode **Analog** (rangkaian op-amp berbasis komparator/PID analog LM358). Dikembangkan untuk kebutuhan riset PID control dan kompetisi robotika.
-
 <p align="center">
-  <img src="Dokumentasi/Start_Merah.gif" width="32%" />
-  <img src="Dokumentasi/Start_Kuning.gif" width="32%" />
-  <img src="Dokumentasi/LF_Analog.gif" width="32%" />
+  <img src="Dokumentasi/Start%20Merah.gif" width="32%" />
+  <img src="Dokumentasi/Start%20Kuning.gif" width="32%" />
+  <img src="Dokumentasi/LF%20Analog.gif" width="32%" />
 </p>
+
+The **Line Follower Analog dan Digital** is a line-following robot developed with **two independent control modes**: a **Digital** mode driven by ESP32-based PID algorithm, and an **Analog** mode built entirely from discrete op-amp (LM358) comparator/PID circuitry. Developed for PID control research and robotics competition.
+
+## 🚀 Project Goal
+
+Enable the robot to:
+- Follow a black line track accurately using either digital or analog control.
+- Handle intersections, dashed lines, and FINISH zones reliably.
+- Compare performance and response characteristics between digital PID and analog PID control.
 
 ---
 
-## ✨ Fitur
+## 🧩 System Overview
 
-- ⚙️ **Dual Mode Operation** — dapat beroperasi dengan kendali digital (ESP32 + algoritma PID) atau kendali analog (rangkaian op-amp diskrit)
-- 🎛️ **PID Steering** — kalkulasi error dari sensor garis dan koreksi kecepatan motor secara real-time
-- 🔢 **8-Channel Multiplexer (MUX)** — pembacaan array sensor garis melalui MUX untuk efisiensi pin I/O
-- 🧭 **Deteksi Persimpangan & Finish** — logika khusus untuk intersection, garis putus-putus, dan zona FINISH
-- 🎚️ **Auto-Kalibrasi Sensor** — kalibrasi otomatis threshold hitam/putih (`blackMode()` / `whiteMode()`)
-- 🔄 **Diagnostik Bias Motor** — koreksi asimetri motor kiri/kanan (perbaikan software & hardware)
+### 🔧 Hardware Structure
+
+#### 1. **Sensor Array**
+- **8-channel Photodiode/IR array** for line detection.
+- **Multiplexer (MUX)** for efficient analog input switching to the microcontroller.
+
+#### 2. **Digital Control Unit**
+- **ESP32** – central microcontroller running the PID algorithm.
+- Auto-calibration for black/white line threshold (`blackMode()` / `whiteMode()`).
+- Junction, dashed-line, and FINISH zone detection logic.
+
+#### 3. **Analog Control Unit**
+- **Op-amp LM358** – comparator and PID error-correction circuitry.
+- Discrete analog components for real-time steering correction without a microcontroller.
+
+#### 4. **Motor Driver**
+- **L293D** – dual H-Bridge for left and right DC motor control.
+
+---
+
+## 🧠 Features
+
+- ⚙️ **Dual Mode Operation** — switch between digital (ESP32 + PID algorithm) and analog (discrete op-amp) control
+- 🎛️ **PID Steering** — real-time error calculation from line sensors with motor speed correction
+- 🔢 **8-Channel Multiplexer (MUX)** — efficient sensor array reading with minimal I/O pins
+- 🧭 **Intersection & Finish Detection** — dedicated logic for intersections, dashed lines, and FINISH zone
+- 🎚️ **Auto Sensor Calibration** — automatic black/white threshold calibration
+- 🔄 **Motor Bias Diagnostics** — correction for left/right motor asymmetry (software & hardware)
+
+---
+
+## 🔌 Wiring Diagram
+
+📌 *Coming soon: circuit diagrams and connection schematics.*
+
+---
+
+## 📸 Gallery
+
+<p align="center">
+  <img src="Dokumentasi/Start%20Merah.gif" width="400"/>
+</p>
+<p align="center">
+  <em>Figure 1: Robot navigating the red-marked starting line</em>
+</p>
+
+<p align="center">
+  <img src="Dokumentasi/Start%20Kuning.gif" width="400"/>
+</p>
+<p align="center">
+  <em>Figure 2: Robot navigating the yellow-marked starting line</em>
+</p>
+
+<p align="center">
+  <img src="Dokumentasi/LF%20Analog.gif" width="400"/>
+</p>
+<p align="center">
+  <em>Figure 3: Robot running in Analog mode on the competition track</em>
+</p>
 
 ---
 
@@ -38,16 +98,12 @@ Line-Follower-Analog-dan-Digital/
 
 ---
 
-## 🛠️ Tools & Komponen
+## 🛠️ Tools & Libraries
 
-| Kategori         | Detail                                  |
-|-------------------|------------------------------------------|
-| Mikrokontroler    | ESP32                                    |
-| Sensor Garis      | Array fototransistor/IR + MUX 8 channel  |
-| Rangkaian Analog  | Op-amp LM358 (komparator/PID analog)     |
-| Driver Motor      | L293D                                    |
-| Firmware          | Arduino / C++                            |
-| Software Pendukung| Arduino IDE / PlatformIO                 |
+- Arduino IDE / PlatformIO
+- ESP32 Core & PID library / custom PWM logic
+- L293D Motor Driver
+- Op-amp LM358 (analog PID/comparator circuit)
 
 ---
 
@@ -65,17 +121,20 @@ Line-Follower-Analog-dan-Digital/
 
 ---
 
-## 📸 Dokumentasi
+## 📚 Future Improvements
 
-![Hardware](Dokumentasi/hardware.jpeg)
+- ⚙️ Tuning otomatis parameter PID (auto-tuning)
+- 📊 Logging data performa digital vs analog untuk perbandingan langsung
+- 🔋 Optimasi konsumsi daya
 
 ---
 
-## 👤 Kontributor
+## 🙌 Credits
 
-- **Dafi Khalif Arrafa** — D-IV Teknologi Rekayasa Instrumentasi dan Kontrol, Sekolah Vokasi UGM
-- **Rio Daris Syathir** — D-IV Teknologi Rekayasa Instrumentasi dan Kontrol, Sekolah Vokasi UGM
-- **Dilla Zulfahrani** — D-IV Teknologi Rekayasa Instrumentasi dan Kontrol, Sekolah Vokasi UGM
+**Team Members:**
+- Dafi Khalif Arrafa — D-IV Teknologi Rekayasa Instrumentasi dan Kontrol, Sekolah Vokasi UGM
+- Rio Daris Syathir — D-IV Teknologi Rekayasa Instrumentasi dan Kontrol, Sekolah Vokasi UGM
+- Dilla Zulfahrani — D-IV Teknologi Rekayasa Instrumentasi dan Kontrol, Sekolah Vokasi UGM
 
 ---
 
